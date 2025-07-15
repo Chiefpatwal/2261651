@@ -1,7 +1,5 @@
-const logger = require('../logging-middleware/middleware/logger.js');
-// update path if logger.js in utils like './utils/logger'
-const express = require("express");
-
+const logEvent = require("../../logging-middleware/middleware/logger");
+const { v4: uuidv4 } = require("uuid");
 
 async function createUser(req, res) {
   await logEvent("backend", "info", "controller", "CreateUser API called");
